@@ -1,6 +1,6 @@
 # TechStore — Consultas Básicas SELECT y Alias
 
-Este repositorio contiene las consultas SQL desarrolladas para el equipo financiero de **TechStore**, junto con la documentación técnica correspondiente.
+Este repositorio contiene la solución a la práctica de extracción de datos para el equipo financiero de **TechStore**, desarrollada en SQL y documentada para entornos profesionales.
 
 ---
 
