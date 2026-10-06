@@ -1,11 +1,11 @@
 -- ══════════════════════════════════════════
 -- TechStore — Consultas Básicas SELECT
 -- Autor: Rodrigo Gabarain
--- Fecha: 6 de Octubre de 2026
+-- Fecha: 06/10/2026
 -- ══════════════════════════════════════════
 
 -- ==========================================
--- 0. CONFIGURACIÓN E INSERCIÓN DE DATOS
+-- 0. CREACIÓN E INSERCIÓN DE DATOS DE PRUEBA
 -- ==========================================
 
 DROP TABLE IF EXISTS sales;
@@ -36,19 +36,20 @@ INSERT INTO sales VALUES
 
 
 -- ==========================================
--- 1. RESOLUCIÓN DE CONSULTAS DEL EJERCICIO
+-- 1. CONSULTAS SOLICITADAS POR EL EJERCICIO
 -- ==========================================
 
 -- Consulta 1: Exploración general de la tabla sales
--- Explicación: SELECT * es conveniente en etapas iniciales de desarrollo o exploración local para conocer la estructura general de la tabla. 
--- No se debe usar en entornos de producción por motivos de rendimiento, consumo innecesario de ancho de banda y fragilidad del código ante cambios de esquema.
+-- Comentario: SELECT * es adecuado durante el desarrollo local para explorar la estructura y tipo de datos.
+-- Sin embargo, debe evitarse en entornos de producción debido a problemas de rendimiento, uso excesivo de ancho de banda,
+-- vulnerabilidad en el código ante cambios en el esquema y riesgos de seguridad por exposición de datos sensibles.
 SELECT * 
 FROM sales;
 
 
 -- Consulta 2: Selección de columnas específicas para finanzas
--- Explicación: Selecciona estrictamente los identificadores requeridos por finanzas (cliente, producto y monto total),
--- evitando transferir datos irrelevantes para este reporte.
+-- Comentario: Extrae únicamente los identificadores requeridos por finanzas (cliente, producto y monto total),
+-- evitando transferir datos innecesarios.
 SELECT 
     customer_id,
     product_id,
@@ -57,8 +58,8 @@ FROM sales;
 
 
 -- Consulta 3: Selección con alias en español para stakeholders
--- Explicación: Renombra las columnas con alias claros en español en formato snake_case (sin espacios ni caracteres especiales)
--- para que el usuario o stakeholder no técnico entienda los datos de inmediato sin consultar el modelo de datos.
+-- Comentario: Renombra las columnas con alias amigables en español usando formato snake_case
+-- para que usuarios no técnicos puedan interpretar la información inmediatamente sin consultar la estructura de la base de datos.
 SELECT 
     order_date AS fecha_pedido,
     product_name AS nombre_producto,
